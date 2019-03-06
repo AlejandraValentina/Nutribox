@@ -1,0 +1,83 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8" />
+    <meta name="format-detection" content="telephone=no">
+    <meta name="msapplication-tap-highlight" content="no">
+    <meta name="viewport" content="user-scalable=no, initial-scale=1, maximum-scale=1, minimum-scale=1, width=device-width">
+    <link rel="stylesheet" type="text/css" href="css/style.css">
+    <script type="text/javascript" src="cordova.js"></script>
+    <!-- El atributo "async" es necesario para que RequireJS funcione en una aplicación de Windows. -->
+    <script type="text/javascript" data-main="scripts/startup" src="lib/require.2.1.8.js" async></script>
+    <script src="scripts/jquery.mobile-1.4.5.min.js"></script>
+    <script src="scripts/jquery.min.js"></script>
+    <link rel="stylesheet" href="scripts/jquery.mobile-1.4.5.min.map" />
+    <title>Login</title>
+
+<script>
+    var usuario, clave;
+    //
+    $(function () {
+        //Envia verificación del login
+        $("#envia").click(function () {
+            usuario = $("#usuario").val();
+            clave = $("#clave").val();
+            //
+            $.ajax({
+                type: "POST",
+                url: "https://mixed-servos.000webhostapp.com/login.php",
+                data: ({ usuario: usuario, clave: clave }),
+                cache: false,
+                datatype: "text",
+                crossDomain: true,
+                beforeSend: function () { $("#mensaje").text('Espere, por favor...'); },
+                success: continua,
+                error: noConexion
+            });
+
+        });
+    });
+    /**********************************************/
+    function continua(datos) {
+        if (datos == "ERROR") {
+            document.getElementById("usuario").value = "";
+            document.getElementById("clave").value = "";
+            $("#mensaje").text('Tu usuario o tu clave de acceso son erróneas ');
+            return;
+          
+        }
+      //  alert("Bienvenido: " + datos);
+        sessionStorage.setItem('usuario', usuario);
+        window.location.href = "home.html";
+    }
+    /*****************************************/
+    function noConexion() {
+        alert("No hay conexión	");
+    }
+</script>
+</head>
+
+<body bgcolor="#d1cece">
+    <center>
+        <div data-role="page" data-theme="a" id="pag1" class="pestana2">
+
+            <div data-role="header">
+                <p>Ingresa tus datos</p>
+            </div>
+            <div data-role="content">
+                <dl>
+                    <dt><label>Usuario:</label></dt>
+                    <dd>  <input type="text" id="usuario" name="usuario"></dd>
+                    <dt> <label>Clave:</label></dt>
+                    <dd><input type="password" id="clave" name="clave"></dd>
+                    <br>
+                    <dt><input type="button" value="Login" id="envia"></dt>
+                    <div id="mensaje"></div>
+                </dl>
+                <br>
+            </div>
+        </div>
+
+    </center>
+</body>
+</html>

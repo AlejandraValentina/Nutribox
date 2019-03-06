@@ -1,0 +1,59 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 15
+VisualStudioVersion = 15.0.28307.421
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{262852C6-CD72-467D-83FE-5EEB1973A190}") = "NutriBox", "NutriBox\NutriBox.jsproj", "{FA8F079C-9732-46B5-95DE-1F45E8DCAA65}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Android = Debug|Android
+		Debug|iOS = Debug|iOS
+		Debug|Windows-ARM = Debug|Windows-ARM
+		Debug|Windows-x64 = Debug|Windows-x64
+		Debug|Windows-x86 = Debug|Windows-x86
+		Release|Android = Release|Android
+		Release|iOS = Release|iOS
+		Release|Windows-ARM = Release|Windows-ARM
+		Release|Windows-x64 = Release|Windows-x64
+		Release|Windows-x86 = Release|Windows-x86
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{FA8F079C-9732-46B5-95DE-1F45E8DCAA65}.Debug|Android.ActiveCfg = Debug|Android
+		{FA8F079C-9732-46B5-95DE-1F45E8DCAA65}.Debug|Android.Build.0 = Debug|Android
+		{FA8F079C-9732-46B5-95DE-1F45E8DCAA65}.Debug|Android.Deploy.0 = Debug|Android
+		{FA8F079C-9732-46B5-95DE-1F45E8DCAA65}.Debug|iOS.ActiveCfg = Debug|iOS
+		{FA8F079C-9732-46B5-95DE-1F45E8DCAA65}.Debug|iOS.Build.0 = Debug|iOS
+		{FA8F079C-9732-46B5-95DE-1F45E8DCAA65}.Debug|iOS.Deploy.0 = Debug|iOS
+		{FA8F079C-9732-46B5-95DE-1F45E8DCAA65}.Debug|Windows-ARM.ActiveCfg = Debug|Windows-ARM
+		{FA8F079C-9732-46B5-95DE-1F45E8DCAA65}.Debug|Windows-ARM.Build.0 = Debug|Windows-ARM
+		{FA8F079C-9732-46B5-95DE-1F45E8DCAA65}.Debug|Windows-ARM.Deploy.0 = Debug|Windows-ARM
+		{FA8F079C-9732-46B5-95DE-1F45E8DCAA65}.Debug|Windows-x64.ActiveCfg = Debug|Windows-x64
+		{FA8F079C-9732-46B5-95DE-1F45E8DCAA65}.Debug|Windows-x64.Build.0 = Debug|Windows-x64
+		{FA8F079C-9732-46B5-95DE-1F45E8DCAA65}.Debug|Windows-x64.Deploy.0 = Debug|Windows-x64
+		{FA8F079C-9732-46B5-95DE-1F45E8DCAA65}.Debug|Windows-x86.ActiveCfg = Debug|Windows-x86
+		{FA8F079C-9732-46B5-95DE-1F45E8DCAA65}.Debug|Windows-x86.Build.0 = Debug|Windows-x86
+		{FA8F079C-9732-46B5-95DE-1F45E8DCAA65}.Debug|Windows-x86.Deploy.0 = Debug|Windows-x86
+		{FA8F079C-9732-46B5-95DE-1F45E8DCAA65}.Release|Android.ActiveCfg = Release|Android
+		{FA8F079C-9732-46B5-95DE-1F45E8DCAA65}.Release|Android.Build.0 = Release|Android
+		{FA8F079C-9732-46B5-95DE-1F45E8DCAA65}.Release|Android.Deploy.0 = Release|Android
+		{FA8F079C-9732-46B5-95DE-1F45E8DCAA65}.Release|iOS.ActiveCfg = Release|iOS
+		{FA8F079C-9732-46B5-95DE-1F45E8DCAA65}.Release|iOS.Build.0 = Release|iOS
+		{FA8F079C-9732-46B5-95DE-1F45E8DCAA65}.Release|iOS.Deploy.0 = Release|iOS
+		{FA8F079C-9732-46B5-95DE-1F45E8DCAA65}.Release|Windows-ARM.ActiveCfg = Release|Windows-ARM
+		{FA8F079C-9732-46B5-95DE-1F45E8DCAA65}.Release|Windows-ARM.Build.0 = Release|Windows-ARM
+		{FA8F079C-9732-46B5-95DE-1F45E8DCAA65}.Release|Windows-ARM.Deploy.0 = Release|Windows-ARM
+		{FA8F079C-9732-46B5-95DE-1F45E8DCAA65}.Release|Windows-x64.ActiveCfg = Release|Windows-x64
+		{FA8F079C-9732-46B5-95DE-1F45E8DCAA65}.Release|Windows-x64.Build.0 = Release|Windows-x64
+		{FA8F079C-9732-46B5-95DE-1F45E8DCAA65}.Release|Windows-x64.Deploy.0 = Release|Windows-x64
+		{FA8F079C-9732-46B5-95DE-1F45E8DCAA65}.Release|Windows-x86.ActiveCfg = Release|Windows-x86
+		{FA8F079C-9732-46B5-95DE-1F45E8DCAA65}.Release|Windows-x86.Build.0 = Release|Windows-x86
+		{FA8F079C-9732-46B5-95DE-1F45E8DCAA65}.Release|Windows-x86.Deploy.0 = Release|Windows-x86
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {2B0FF6D4-CB0E-4C19-88F8-FF42F852F384}
+	EndGlobalSection
+EndGlobal

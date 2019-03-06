@@ -1,0 +1,119 @@
+﻿<link href='http://fonts.googleapis.com/css?family=Roboto' rel='stylesheet' type='text/css'>
+
+<html>
+<head>
+    <title>Registrarse</title>
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8" />
+    <meta name="format-detection" content="telephone=no">
+    <meta name="msapplication-tap-highlight" content="no">
+    <meta name="viewport" content="user-scalable=no, initial-scale=1, maximum-scale=1, minimum-scale=1, width=device-width">
+    <link rel="stylesheet" type="text/css" href="css/style.css">
+    <script type="text/javascript" src="cordova.js"></script>
+    <!-- El atributo "async" es necesario para que RequireJS funcione en una aplicación de Windows. -->
+    <script type="text/javascript" data-main="scripts/startup" src="lib/require.2.1.8.js" async></script>
+    <script src="scripts/jquery.mobile-1.4.5.min.js"></script>
+    <script src="scripts/jquery.min.js"></script>
+    <link rel="stylesheet" href="scripts/jquery.mobile-1.4.5.min.map" />
+    <script>
+        var usuario,email, clave;
+        //
+        $(function () {
+            //Envia registro del usuario
+            $("#envia").click(function () {
+                usuario = $("#usuario").val();
+                email = $("#email").val();
+                clave = $("#clave").val();
+                clave2 = $("#clave2").val();
+                if (clave != clave2) {
+                    $("#mensaje").text('Las claves no son iguales');
+
+                } else if (usuario == "" || email == "" || clave == "") {
+                    $("#mensaje").text('Alguno de los campos esta vacio');} 
+                else {
+
+                    //
+                    $.ajax({
+                        type: "POST",
+                        url: "https://mixed-servos.000webhostapp.com/register.php",
+                        data: ({ usuario: usuario, email: email, clave: clave }),
+                        cache: false,
+                        datatype: "text",
+                        crossDomain: true,
+                        beforeSend: function () { $("#mensaje").text('Espere, por favor...'); },
+                        success: continua,
+                        error: noConexion
+                    });
+                }
+            });
+        });
+        /**********************************************/
+        function continua(datos) {
+            if (datos == "ERROR") {
+                document.getElementById("usuario").value = "";
+                document.getElementById("email").value = "";
+                document.getElementById("clave").value = "";
+                document.getElementById("clave2").value = "";
+                $("#mensaje").text('El usuario esta en uso');
+                return;
+
+            }
+            //  alert("Bienvenido: " + datos);
+            sessionStorage.setItem('usuario', usuario);
+            window.location.href = "home.html";
+
+        }
+        /*****************************************/
+        function noConexion() {
+            alert("No hay conexión	");
+        }
+    </script>
+
+
+
+</head >
+     <body bgcolor="#d1cece">
+           <div class="titulo">
+              <div class="dropdown">
+                <button class="dropbtn">&#9776</button>
+                <div class="dropdown-content">
+                <a style=" background-color: #008000" color="white"> Nombre Usuario</a>
+                <a href="home.html"><img height="19" src="images/001-home.png">&#160;&nbsp;Home</a>
+                <a href="buscar.html"><img height="19" src="images/002-search.png">&#160;&nbsp;Buscar Productos</a>
+                <a href="favoritos.html"><img height="19" href="menu" src="images/005-like.png">&#160;&nbsp;Favoritos</a>
+                <a href="lista.html"><img height="19" src="images/004-shopping-cart.png">&#160;&nbsp;Lista de Compras</a>
+                <a href="menu"><img height="19" src="images/003-star.png">&#160;&nbsp;Promociones</a>
+                <a>_____________________</a>
+                <a href="menu"><img height="19" src="images/007-settings.png">&#160;&nbsp;Configuracion</a>
+                <a href="menu"><img height="19" src="images/006-info-button.png">&#160;&nbsp;Informacion</a>
+                </div>
+                <a style="font-family = Roboto,sans-serif">NutriBox</a>
+            </div>
+        </div>
+           <br>
+           <div class="pestana">
+               <center>
+                   <section id="formulario">
+                       <span style="line-height:0px; font-size:0px;">&nbsp;</span>
+                       <p class="titulo2">Nuevo Usuario</p>
+                       <form action="" class='formulario'>
+                           <input class="inf" type="text" id="usuario" name="usuario" placeholder="Nombre"><div style="height: 20px; background-color: white;"></div>
+                           <input class="inf" type="text" id="email" name="email" placeholder="Email"><div style="height: 20px; background-color: white;"></div>
+                           <input class="inf" type="password" id="clave" name="clave" placeholder="Contraseña"><div style="height: 20px; background-color: white;"></div>
+                           <input class="inf" type="password" id="clave2" name="clave2" placeholder="Repetir Contraseña">
+                       </form>
+                   </section>
+               </center>
+               <center><input type="submit" value="COMENZAR" class="enviar" id="envia"></center>
+               <a class='btn-bot2' align='center' href="login.html">
+                   <div>
+                       <BR>
+                       <div>Ya tengo usuario </div>
+                       <br>
+                   </div>
+               </a>
+               <p align='center' id="mensaje"></p>
+               <br>
+
+           </div>
+</body>
+</html>
